@@ -1,24 +1,32 @@
 package config;
 
-import java.net.URL;
-
 import org.aeonbits.owner.Config;
 
+import java.net.URL;
+
+@Config.Sources("classpath:${host}.properties")
 public interface WebDriverConfig extends Config {
 
     @Key("baseUrl")
-    @DefaultValue("https://google.com")
+    @DefaultValue("https://www.google.com/")
     String getBaseUrl();
 
     @Key("browser")
     @DefaultValue("CHROME")
-    Browser getBrowser();
+    String getBrowser();
 
     @Key("browserVersion")
-    @DefaultValue("100")
+    @DefaultValue("100.0")
     String getBrowserVersion();
 
+    @Key("browserSize")
+    @DefaultValue("1920x1080")
+    String getBrowserSize();
+
     @Key("remoteUrl")
-    @DefaultValue("https://localhost:4444")
     URL getRemoteUrl();
+
+    @Key("remoteWebDriver")
+    String getRemoteWebDriver();
+
 }
