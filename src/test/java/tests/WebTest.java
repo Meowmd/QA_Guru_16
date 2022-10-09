@@ -11,12 +11,14 @@ import org.openqa.selenium.WebElement;
 
 public class WebTest {
     private WebDriver driver;
+
     @BeforeEach
     public void startDriver() {
         driver = new WebDriverProvider().get();
     }
+
     @Test
-    public void testGoogle(){
+    public void testGoogle() {
         String title = driver.getTitle();
         WebElement searchInput = driver.findElement(By.name("q"));
         searchInput.sendKeys("qa");

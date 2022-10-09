@@ -1,6 +1,7 @@
 package config;
 
 import java.net.URL;
+
 import org.aeonbits.owner.Config;
 
 public interface WebDriverConfig extends Config {
